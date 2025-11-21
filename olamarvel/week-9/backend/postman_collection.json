@@ -1,0 +1,56 @@
+{
+  "info": {
+    "_postman_id": "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+    "name": "Payment API Documentation",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "API documentation for the Payment Service, including legacy and transformed payment endpoints."
+  },
+  "item": [
+    {
+      "name": "Legacy Payments (V1)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/v1/payments",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "v1",
+            "payments"
+          ]
+        },
+        "description": "This endpoint fetches payment data directly from the legacy system. The data is returned in its original format without any transformations.\n\n**Response Structure:**\n- `data`: An array of legacy payment objects.\n  - Each object has the following properties:\n    - `transactionId`: (string) A unique identifier for the transaction.\n    - `amount`: (number) The monetary value of the payment.\n    - `userId`: (string) The ID of the user who made the payment.\n    - `userName`: (string) The name of the user who made the payment.\n    - `date`: (string) The date and time of the transaction in ISO 8601 format."
+      },
+      "response": []
+    },
+    {
+      "name": "Transformed Payments (V2)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/v2/payments",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "v2",
+            "payments"
+          ]
+        },
+        "description": "This endpoint fetches payment data that has been transformed from the legacy system into a new, standardized format. It demonstrates how the system processes and restructures data.\n\n**Response Structure:**\n- `data`: An array of transformed payment objects.\n  - Each object has the following properties:\n    - `id`: (string) A unique identifier for the payment (transformed from legacy `transactionId`).\n    - `amount`: (number) The monetary value of the payment.\n    - `customerId`: (string) The ID of the customer associated with the payment (transformed from legacy `userId`).\n    - `customerName`: (string) The name of the customer (transformed from legacy `userName`).\n    - `timestamp`: (string) The date and time of the payment in ISO 8601 format (transformed from legacy `date`)."
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "BASE_URL",
+      "value": "http://localhost:4000",
+      "type": "string",
+      "description": "The base URL for the API. Change this if your API is hosted elsewhere."
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: . # Build the image from the current directory (where your Dockerfile is)
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000" # Map host port 5000 to container port 5000 (as per your app.listen)
+    environment:
+      # Pass environment variables to your backend container
+      MONGO_URI: "mongodb://mongodb:27017/pulsetrack" # Connects to the 'mongodb' service
+      PORT: 5000
+      NODE_ENV: development
+    depends_on:
+      - mongodb # Ensure mongodb starts before the backend
+    networks:
+      - app-network
+
+  mongodb:
+    image: mongo:latest # Use the official MongoDB image
+    ports:
+      - "27017:27017" # Optional: Map MongoDB port to host for direct access if needed
+    volumes:
+      - mongodb_data:/data/db # Persist MongoDB data
+    networks:
+      - app-network
+
+volumes:
+  mongodb_data: # Define the volume for persistent data
+
+networks:
+  app-network: # Define a custom network for services to communicate
