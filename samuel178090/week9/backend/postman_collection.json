@@ -1,0 +1,75 @@
+{
+  "info": {
+    "name": "LegacyBridge API",
+    "description": "Integration service for legacy systems",
+    "version": "1.0.0"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["health"]
+        }
+      }
+    },
+    {
+      "name": "Get All Payments (v2)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/v2/payments",
+          "host": ["{{baseUrl}}"],
+          "path": ["v2", "payments"]
+        }
+      }
+    },
+    {
+      "name": "Get Payment by ID (v2)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/v2/payments/pay_1",
+          "host": ["{{baseUrl}}"],
+          "path": ["v2", "payments", "pay_1"]
+        }
+      }
+    },
+    {
+      "name": "Get All Customers (v2)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/v2/customers",
+          "host": ["{{baseUrl}}"],
+          "path": ["v2", "customers"]
+        }
+      }
+    },
+    {
+      "name": "Get Customer by ID (v2)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/v2/customers/cust_1",
+          "host": ["{{baseUrl}}"],
+          "path": ["v2", "customers", "cust_1"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    }
+  ]
+}

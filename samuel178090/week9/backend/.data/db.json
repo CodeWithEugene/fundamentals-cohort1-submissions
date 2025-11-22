@@ -1,0 +1,13 @@
+{
+  "users": {
+    "u_p474nh2y": {
+      "id": "u_p474nh2y",
+      "email": "ellen@example.com",
+      "passwordHash": "$2a$10$Jd48hbuZg/4boSE9RSoWPOtqJVNUiUNEslPZKI4M4MfxUIgO1Rpd.",
+      "name": "Ellen"
+    }
+  },
+  "refresh": {
+    "r_qp1ztcus": "u_p474nh2y"
+  }
+}

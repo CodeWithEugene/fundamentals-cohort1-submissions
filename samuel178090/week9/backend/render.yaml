@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: legacybridge-backend
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: FRONTEND_ORIGIN
+        value: https://legacybridge-frontend.netlify.app
