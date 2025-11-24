@@ -1,0 +1,33 @@
+{
+  "name": "deployhub-backend",
+  "version": "1.0.0",
+  "description": "DeployHub - Backend API with observability and CI/CD",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "NODE_ENV=development node src/index.js",
+    "test": "node --test src/__tests__/*.js",
+    "lint": "eslint src/",
+    "format": "prettier --write src/"
+  },
+  "keywords": ["express", "observability", "metrics", "ci-cd"],
+  "author": "DeployHub Team",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "pino": "^8.16.1",
+    "pino-pretty": "^10.2.3",
+    "prom-client": "^15.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.52.0",
+    "prettier": "^3.0.3",
+    "node-fetch": "^3.3.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

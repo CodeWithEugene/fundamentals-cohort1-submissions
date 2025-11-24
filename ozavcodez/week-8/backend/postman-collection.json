@@ -1,0 +1,73 @@
+{
+  "info": {
+    "name": "DeployHub API",
+    "description": "API endpoints for DeployHub CI/CD platform",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/health",
+          "host": ["{{base_url}}"],
+          "path": ["api", "health"]
+        }
+      }
+    },
+    {
+      "name": "Get Metrics",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/metrics",
+          "host": ["{{base_url}}"],
+          "path": ["api", "metrics"]
+        }
+      }
+    },
+    {
+      "name": "Get Deployments",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/deployments",
+          "host": ["{{base_url}}"],
+          "path": ["api", "deployments"]
+        }
+      }
+    },
+    {
+      "name": "Record Deployment",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"service\": \"auth-service\",\n  \"version\": \"1.5.0\",\n  \"environment\": \"production\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/deployments",
+          "host": ["{{base_url}}"],
+          "path": ["api", "deployments"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ]
+}

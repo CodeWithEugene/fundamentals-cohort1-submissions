@@ -1,0 +1,661 @@
+{
+  "info": {
+    "name": "PulseTrack API",
+    "description": "Health Monitoring Application API Documentation",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Create User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"password\": \"password123\",\n  \"age\": 30,\n  \"gender\": \"Male\",\n  \"height\": 180,\n  \"weight\": 75,\n  \"medicalHistory\": \"No known allergies\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/users",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "users"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5000/api/users",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "users"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get User by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5000/api/users/{{userId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "users", "{{userId}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update User",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"weight\": 72,\n  \"medicalHistory\": \"Updated medical history\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/users/{{userId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "users", "{{userId}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete User",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:5000/api/users/{{userId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "users", "{{userId}}"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Activities",
+      "item": [
+        {
+          "name": "Create Activity",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user\": \"{{userId}}\",\n  \"type\": \"Running\",\n  \"duration\": 30,\n  \"calories\": 300,\n  \"distance\": 5,\n  \"intensity\": \"High\",\n  \"notes\": \"Morning run in the park\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/activities",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "activities"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Activities",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5000/api/activities",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "activities"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get User Activities",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5000/api/activities/user/{{userId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "activities", "user", "{{userId}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Activity by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5000/api/activities/{{activityId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "activities", "{{activityId}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Activity",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"duration\": 45,\n  \"calories\": 450\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/activities/{{activityId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "activities", "{{activityId}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Activity",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:5000/api/activities/{{activityId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "activities", "{{activityId}}"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Meals",
+      "item": [
+        {
+          "name": "Create Meal",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user\": \"{{userId}}\",\n  \"name\": \"Grilled Chicken Salad\",\n  \"type\": \"Lunch\",\n  \"calories\": 450,\n  \"protein\": 35,\n  \"carbs\": 30,\n  \"fat\": 15,\n  \"ingredients\": [\"Chicken\", \"Lettuce\", \"Tomato\", \"Olive Oil\"],\n  \"notes\": \"Healthy lunch option\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/meals",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "meals"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Meals",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5000/api/meals",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "meals"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get User Meals",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5000/api/meals/user/{{userId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "meals", "user", "{{userId}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Meal by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5000/api/meals/{{mealId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "meals", "{{mealId}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Meal",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"calories\": 500,\n  \"protein\": 40\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/meals/{{mealId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "meals", "{{mealId}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Meal",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:5000/api/meals/{{mealId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "meals", "{{mealId}}"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Doctors",
+      "item": [
+        {
+          "name": "Create Doctor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Dr. Sarah Johnson\",\n  \"specialization\": \"Cardiology\",\n  \"email\": \"sarah.johnson@hospital.com\",\n  \"phone\": \"+1234567890\",\n  \"hospital\": \"City Medical Center\",\n  \"address\": \"123 Medical Street\",\n  \"qualifications\": [\"MD\", \"Board Certified\"],\n  \"experience\": 15\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/doctors",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "doctors"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Doctors",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5000/api/doctors",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "doctors"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Doctor by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5000/api/doctors/{{doctorId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "doctors", "{{doctorId}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Doctor",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"experience\": 16,\n  \"hospital\": \"New Medical Center\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/doctors/{{doctorId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "doctors", "{{doctorId}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Doctor",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:5000/api/doctors/{{doctorId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "doctors", "{{doctorId}}"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Appointments",
+      "item": [
+        {
+          "name": "Create Appointment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user\": \"{{userId}}\",\n  \"doctor\": \"{{doctorId}}\",\n  \"date\": \"2024-12-15\",\n  \"time\": \"14:30\",\n  \"reason\": \"Regular checkup\",\n  \"status\": \"Scheduled\",\n  \"notes\": \"Bring medical records\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/appointments",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "appointments"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Appointments",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5000/api/appointments",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "appointments"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get User Appointments",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5000/api/appointments/user/{{userId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "appointments", "user", "{{userId}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Appointment by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5000/api/appointments/{{appointmentId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "appointments", "{{appointmentId}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Appointment",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"Completed\",\n  \"prescription\": \"Take medication twice daily\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/appointments/{{appointmentId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "appointments", "{{appointmentId}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Appointment",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:5000/api/appointments/{{appointmentId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "appointments", "{{appointmentId}}"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Reports",
+      "item": [
+        {
+          "name": "Create Report",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user\": \"{{userId}}\",\n  \"type\": \"Health Summary\",\n  \"title\": \"Monthly Health Report - December 2024\",\n  \"content\": \"Overall health status is good. Continue current exercise routine.\",\n  \"period\": {\n    \"startDate\": \"2024-12-01\",\n    \"endDate\": \"2024-12-31\"\n  },\n  \"metrics\": {\n    \"totalActivities\": 15,\n    \"totalCaloriesBurned\": 4500,\n    \"averageHeartRate\": 72\n  }\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/reports",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "reports"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Reports",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5000/api/reports",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "reports"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get User Reports",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5000/api/reports/user/{{userId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "reports", "user", "{{userId}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Report by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5000/api/reports/{{reportId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "reports", "{{reportId}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Report",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"content\": \"Updated health summary with latest metrics\",\n  \"metrics\": {\n    \"totalActivities\": 16,\n    \"totalCaloriesBurned\": 4800\n  }\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/reports/{{reportId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "reports", "{{reportId}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Report",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:5000/api/reports/{{reportId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "reports", "{{reportId}}"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "userId",
+      "value": "replace_with_actual_user_id"
+    },
+    {
+      "key": "activityId",
+      "value": "replace_with_actual_activity_id"
+    },
+    {
+      "key": "mealId",
+      "value": "replace_with_actual_meal_id"
+    },
+    {
+      "key": "doctorId",
+      "value": "replace_with_actual_doctor_id"
+    },
+    {
+      "key": "appointmentId",
+      "value": "replace_with_actual_appointment_id"
+    },
+    {
+      "key": "reportId",
+      "value": "replace_with_actual_report_id"
+    }
+  ]
+}

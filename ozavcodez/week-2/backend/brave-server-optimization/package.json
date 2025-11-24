@@ -1,0 +1,30 @@
+{
+  "name": "workers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "profile": "node --prof src/server.js",
+    "inspect": "node --inspect src/server.js",
+    "test:unoptimized": "autocannon -c 100 -d 30 -m POST -H 'Content-Type: application/json' -i test-data.json http://localhost:3000/api/unoptimized/process-data",
+    "test:optimized": "autocannon -c 100 -d 30 -m POST -H 'Content-Type: application/json' -i test-data.json http://localhost:3000/api/optimized/process-data",
+    "clinic:doctor": "clinic doctor -- node src/server.js",
+    "clinic:flame": "clinic flame -- node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "autocannon": "^8.0.0",
+    "clinic": "^13.0.0",
+    "nodemon": "^3.1.10"
+  }
+}
