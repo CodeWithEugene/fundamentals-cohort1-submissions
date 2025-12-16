@@ -345,3 +345,7 @@ Real-time Task Manager Team
 
 **Note**: This is a learning project for Week 10 of the Software Engineering Fundamentals course. The application demonstrates GraphQL, WebSockets, and real-time collaboration patterns.
 
+
+
+
+

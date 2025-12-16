@@ -1,0 +1,78 @@
+.stats-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.panel {
+  background: white;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.12);
+}
+
+.header-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.subtitle {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.metric {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: #f9fafb;
+}
+
+.metric .label {
+  display: block;
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+
+.metric .value {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.cache-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+}
+
+.dot-green {
+  background: #10b981;
+}
+
+.dot-gray {
+  background: #9ca3af;
+}
+
+.error {
+  border-left: 4px solid #ef4444;
+}
+
+.error button {
+  margin-top: 0.75rem;
+}

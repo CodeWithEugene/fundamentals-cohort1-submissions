@@ -1,0 +1,97 @@
+{
+  "info": {
+    "name": "PayVerse Backend API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Postman collection for PayVerse Week 11 backend"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4100/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4100",
+          "path": ["health"]
+        }
+      }
+    },
+    {
+      "name": "Create Payment",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userId\": \"user-123\",\n  \"amount\": 120.5,\n  \"currency\": \"USD\",\n  \"region\": \"us-east-1\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:4100/api/payments",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4100",
+          "path": ["api", "payments"]
+        }
+      }
+    },
+    {
+      "name": "List Payments",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4100/api/payments",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4100",
+          "path": ["api", "payments"]
+        }
+      }
+    },
+    {
+      "name": "Update Payment Status",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"COMPLETED\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:4100/api/payments/{{paymentId}}/status",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4100",
+          "path": ["api", "payments", "{{paymentId}}", "status"]
+        }
+      }
+    },
+    {
+      "name": "Get Payment Stats",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4100/api/payments/stats",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4100",
+          "path": ["api", "payments", "stats"]
+        }
+      }
+    }
+  ]
+}
