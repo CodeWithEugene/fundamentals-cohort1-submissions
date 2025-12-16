@@ -20,23 +20,23 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        working-directory: DeployHub-frontend
+        working-directory: develophub
         run: npm install
 
       - name: Lint
-        working-directory: DeployHub-frontend
+        working-directory: develophub
         run: npm run lint --if-present
 
       - name: Run Tests
-        working-directory: DeployHub-frontend
+        working-directory: develophub
         run: npm test --if-present
 
       - name: Build
-        working-directory: DeployHub-frontend
+        working-directory: develophub
         run: npm run build
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
           name: vite-dist
-          path: dist
+          path: develophub/dist
